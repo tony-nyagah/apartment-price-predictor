@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "apartment-price-predictor"
+version = "0.1.0"
+description = "A price predictor for apartments in Kenya."
+authors = ["Antony Nyagah <tony.m.nyagah@gmail.com>", "Maxwell Mogambi <https://github.com/maxwellmogambi>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "apartment_price_predictor"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Scrapy = "^2.11.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.3.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

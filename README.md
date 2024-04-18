@@ -55,7 +55,15 @@ In Kenya's dynamic real estate market, prospective homebuyers often face challen
 - Deployment: [WIP]
 
 ## Getting Started
-[WIP]
+### Scraping the data
+To scrape data from BuyRentKenya, run the following command:
+```python
+scrapy crawl buyrentkenya
+```
+To put the data into a CSV file, run the following command:
+```python
+scrapy crawl buyrentkenya -o buyrentkenya_data.csv
+```
 
 ## Contributing
 [WIP]

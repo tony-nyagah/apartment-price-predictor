@@ -1,4 +1,4 @@
-# Scrapy settings for buyrentkenya_scraper project
+# Scrapy settings for apartment_price_scraper project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,17 +7,17 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "buyrentkenya_scraper"
+BOT_NAME = "apartment_price_scraper"
 
-SPIDER_MODULES = ["buyrentkenya_scraper.spiders"]
-NEWSPIDER_MODULE = "buyrentkenya_scraper.spiders"
+SPIDER_MODULES = ["apartment_price_scraper.spiders"]
+NEWSPIDER_MODULE = "apartment_price_scraper.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "buyrentkenya_scraper (+http://www.yourdomain.com)"
+#USER_AGENT = "apartment_price_scraper (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "buyrentkenya_scraper.middlewares.BuyrentkenyaScraperSpiderMiddleware": 543,
+#    "apartment_price_scraper.middlewares.ApartmentPriceScraperSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "buyrentkenya_scraper.middlewares.BuyrentkenyaScraperDownloaderMiddleware": 543,
+#    "apartment_price_scraper.middlewares.ApartmentPriceScraperDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "buyrentkenya_scraper.pipelines.BuyrentkenyaScraperPipeline": 300,
+#    "apartment_price_scraper.pipelines.ApartmentPriceScraperPipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

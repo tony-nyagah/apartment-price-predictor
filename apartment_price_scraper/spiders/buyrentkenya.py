@@ -33,7 +33,9 @@ class BuyrentkenyaSpider(scrapy.Spider):
             item["title"] = response.xpath(
                 '//*[@id="mainContent"]/div[2]/div[2]/div[2]/div[1]/h1/text()'
             ).extract()
-            item["description"] = response.css("div.my-3 div.text-grey-550 ::text").get()
+            item["description"] = response.css(
+                "div.my-3 div.text-grey-550 ::text"
+            ).get()
             item["price"] = response.xpath(
                 '//*[@id="mainContent"]/divres[2]/div[3]/div/div[3]/div[1]/div[2]/div[1]/div/div/div/span/span/text()'
             ).get()
@@ -43,17 +45,18 @@ class BuyrentkenyaSpider(scrapy.Spider):
             item["location"] = response.xpath(
                 '//*[@id="mainContent"]/div[2]/div[3]/div/div[3]/div[1]/div[2]/div[1]/div/p/text()'
             ).get()
-            item["bedrooms"] = response.xpath(
-                '//*[@id="mainContent"]/div[2]/div[3]/div/div[3]/div[1]/div[2]/div[2]/div/div/span[1]/text()'
-            )[1].get()
-            item["bathrooms"] = response.xpath(
-                '//*[@id="mainContent"]/div[2]/div[3]/div/div[3]/div[1]/div[2]/div[2]/div/div/span[2]/text()'
-            )[1].get()
+            item["bedrooms"] = response.css(
+                "div.mb-3.md:mb-4 > div.flex.flex-wrap.my-4 > span::attr(aria-label)"
+            ).get()
+            #  product_price=product.css("div.info > div.prc::text").get(),  
+            item["bathrooms"] = response.css()
             item["features"] = response.css(
                 "ul.flex li.flex div.overflow-hidden ::text"
             ).getall()
         except IndexError:
-                item["bedrooms"] = None  # Set a default value or log a warning
-                self.logger.warning(f"Bedrooms information not found for URL: {response.url}")
+            item["bedrooms"] = None  # Set a default value or log a warning
+            self.logger.warning(
+                f"Bedrooms information not found for URL: {response.url}"
+            )
 
         yield item

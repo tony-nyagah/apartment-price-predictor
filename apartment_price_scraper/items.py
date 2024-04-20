@@ -16,4 +16,6 @@ class ApartmentPriceScraperItem(scrapy.Item):
     location = scrapy.Field()
     bedrooms = scrapy.Field()
     bathrooms = scrapy.Field()
-    features = scrapy.Field()
+    internal_features = scrapy.Field()
+    external_features = scrapy.Field()
+    nearby = scrapy.Field()

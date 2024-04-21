@@ -21,25 +21,44 @@ class BuyrentkenyaSpider(scrapy.Spider):
             self.logger.error(f"Error occurred in parse method: {e}")
 
     def parse_listing_page(self, response):
-        listing_details = ApartmentPriceScraperItem(
-            title=response.css("h1::text").get().strip(),
-            description=response.css("div.my-3 div.text-grey-550::text").get().strip(),
-            price=response.css("span[aria-label='price']::text")
+        price = (
+            response.css("span[aria-label='price']::text")
             .get()
             .strip()
-            .replace("KSh ", ""),
+            .replace("KSh ", "")
+            .replace(",", "")
+        )
+        bedrooms = (
+            response.css('span[aria-label="bedrooms"]::text').getall()[-1].strip()
+        )
+        bathrooms = (
+            response.css('span[aria-label="bathrooms"]::text').getall()[-1].strip()
+        )
+        internal_features = response.css(
+            "div.flex.flex-col:contains('Internal features') li div::text"
+        ).getall()
+        external_features = response.css(
+            "div.flex.flex-col:contains('External features') li div::text"
+        ).getall()
+        nearby = response.css(
+            "div.flex.flex-col:contains('Nearby') li div::text"
+        ).getall()
+
+        listing_details = ApartmentPriceScraperItem(
+            title=response.css("h1::text").get().strip(),
+            price=int(price),
             location=response.css("p.items-center.text-sm.text-gray-500::text")
             .get()
             .strip(),
-            bedrooms=response.css('span[aria-label="bedrooms"]::text')
-            .getall()[-1]
-            .strip(),
-            bathrooms=response.css('span[aria-label="bathrooms"]::text')
-            .getall()[-1]
-            .strip(),
-            # internal_features =
-            # external_features =
-            # nearby =
+            bedrooms=int(bedrooms),
+            bathrooms=int(bathrooms),
+            internal_features=[
+                feature.strip() for feature in internal_features if feature.strip()
+            ],
+            external_features=[
+                feature.strip() for feature in external_features if feature.strip()
+            ],
+            nearby=[feature.strip() for feature in nearby if feature.strip()],
         )
         print(listing_details)
         yield listing_details

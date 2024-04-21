@@ -10,9 +10,7 @@ class ApartmentPriceScraperItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     title = scrapy.Field()
-    description = scrapy.Field()
     price = scrapy.Field()
-    frequency = scrapy.Field()
     location = scrapy.Field()
     bedrooms = scrapy.Field()
     bathrooms = scrapy.Field()

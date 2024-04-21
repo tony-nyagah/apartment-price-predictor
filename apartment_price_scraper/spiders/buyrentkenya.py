@@ -6,7 +6,10 @@ from apartment_price_scraper.items import ApartmentPriceScraperItem
 class BuyrentkenyaSpider(scrapy.Spider):
     name = "buyrentkenya"
     allowed_domains = ["buyrentkenya.com"]
-    start_urls = ["https://www.buyrentkenya.com/flats-apartments-for-rent"]
+    start_urls = [
+        f"https://www.buyrentkenya.com/flats-apartments-for-rent?page={page_number}"
+        for page_number in range(1, 200)
+    ]
 
     def parse(self, response):
         try:

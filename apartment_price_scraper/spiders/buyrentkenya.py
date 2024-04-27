@@ -38,13 +38,13 @@ class BuyrentkenyaSpider(scrapy.Spider):
             response.css('span[aria-label="bathrooms"]::text').getall()[-1].strip()
         )
         internal_features = response.css(
-            "div.flex.flex-col:contains('Internal features') li div::text"
+            "div[data-cy='listing-amenities-component'] div.flex.flex-col:contains('Internal features') li div::text"
         ).getall()
         external_features = response.css(
-            "div.flex.flex-col:contains('External features') li div::text"
+            "div[data-cy='listing-amenities-component'] div.flex.flex-col:contains('External features') li div::text"
         ).getall()
         nearby = response.css(
-            "div.flex.flex-col:contains('Nearby') li div::text"
+            "div[data-cy='listing-amenities-component'] div.flex.flex-col:contains('Nearby') li div::text"
         ).getall()
 
         listing_details = ApartmentPriceScraperItem(

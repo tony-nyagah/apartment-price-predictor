@@ -10,9 +10,13 @@ packages = [{include = "apartment_price_predictor"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 Scrapy = "^2.11.1"
+jupyterlab = "^4.1.8"
+pandas = "^2.2.2"
+polars = "^0.20.22"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.3.7"
+black = "^24.4.2"
 
 [build-system]
 requires = ["poetry-core"]

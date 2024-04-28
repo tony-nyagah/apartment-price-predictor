@@ -292,3 +292,6 @@ dist
 
 # vscode
 .vscode/
+
+# csv files
+*.csv

@@ -55,7 +55,8 @@ In Kenya's dynamic real estate market, prospective homebuyers often face challen
 - Deployment: [WIP]
 
 ## Getting Started
-[WIP]
+### Scraping the data
+Scraping the data generates a csv file named `apartments.csv`.
 
 ## Contributing
 [WIP]

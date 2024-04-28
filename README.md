@@ -56,11 +56,7 @@ In Kenya's dynamic real estate market, prospective homebuyers often face challen
 
 ## Getting Started
 ### Scraping the data
-To scrape data from BuyRentKenya, run the following command:
-```python
-scrapy crawl buyrentkenya
-```
-This command generates a csv file named `apartments.csv`.
+Scraping the data generates a csv file named `apartments.csv`.
 
 ## Contributing
 [WIP]

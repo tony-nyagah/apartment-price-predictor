@@ -13,6 +13,10 @@ Scrapy = "^2.11.1"
 jupyterlab = "^4.1.8"
 pandas = "^2.2.2"
 polars = "^0.20.22"
+scikit-learn = "^1.4.2"
+matplotlib = "^3.8.4"
+seaborn = "^0.13.2"
+jupyter-black = "^0.3.4"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.3.7"

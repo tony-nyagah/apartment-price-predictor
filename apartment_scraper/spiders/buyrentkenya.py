@@ -4,7 +4,7 @@ import scrapy
 class BuyrentkenyaSpider(scrapy.Spider):
     name = "buyrentkenya"
     allowed_domains = ["buyrentkenya.com"]
-    start_urls = ["https://www.buyrentkenya.com/flats-apartments-for-sale"]
+    start_urls = ["https://www.buyrentkenya.com/flats-apartments-for-rent"]
 
     def parse(self, response):
         for selector in response.css("div.listing-card"):

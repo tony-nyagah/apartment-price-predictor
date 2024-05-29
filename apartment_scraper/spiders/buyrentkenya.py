@@ -12,7 +12,13 @@ class BuyrentkenyaSpider(scrapy.Spider):
                 "location": selector.css("p.ml-1.truncate.text-grey-650::text").get(),
                 "bedrooms": selector.css("span[data-cy='card-beds']::text").get(),
                 "bathrooms": selector.css("span[data-cy='card-bathrooms']::text").get(),
-                "price": selector.css("span[data-cy='card-price']::text").get(),
+                "price": selector.css(
+                    "div.listing-card:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div.listing-card:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)::text"
+                ).get(),
             }
 
-        next_page_link = response.css("")
+        next_page_links = response.css(
+            "ul.pagination-page-nav li.page-item a::attr(href)"
+        ).getall()
+        for link in next_page_links:
+            yield response.follow(link, callback=self.parse)

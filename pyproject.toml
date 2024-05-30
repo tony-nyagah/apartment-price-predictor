@@ -13,6 +13,9 @@ Scrapy = "^2.11.1"
 jupyterlab = "^4.1.8"
 pandas = "^2.2.2"
 polars = "^0.20.22"
+pyarrow = "^16.1.0"
+plotly = "^5.22.0"
+matplotlib = "^3.9.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.3.7"

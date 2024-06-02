@@ -1,6 +1,7 @@
 import csv
 
 from apartment_scraper.spiders.buyrentkenya import BuyrentkenyaSpider
+from apartment_scraper.spiders.property24 import Property24Spider
 from scrapy import signals
 from scrapy.crawler import CrawlerProcess
 from scrapy.signalmanager import dispatcher
@@ -15,7 +16,8 @@ def apartment_spider_results():
     dispatcher.connect(crawler_results, signal=signals.item_passed)
 
     process = CrawlerProcess()
-    process.crawl(BuyrentkenyaSpider)
+    # process.crawl(BuyrentkenyaSpider, Property24Spider)
+    process.crawl(Property24Spider)
     process.start()
 
     return apartment_results

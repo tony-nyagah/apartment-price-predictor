@@ -48,9 +48,8 @@ In Kenya's dynamic real estate market, prospective homebuyers often face challen
 
 ## Technologies Used
 - Web Scraping: Scrapy
-- Backend Development: FastAPI
-- Machine Learning: [WIP]
-- Frontend Development: [WIP]
+- Web Application Development: FastAPI + HTMX + DaisyUI
+- Machine Learning: Scikit-learn
 - Database: SQLite
 - Deployment: [WIP]
 

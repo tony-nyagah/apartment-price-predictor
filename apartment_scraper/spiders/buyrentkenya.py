@@ -12,8 +12,11 @@ class BuyrentkenyaSpider(scrapy.Spider):
                 "location": selector.css("p.ml-1.truncate.text-grey-650::text").get(),
                 "bedrooms": selector.css("span[data-cy='card-beds']::text").get(),
                 "bathrooms": selector.css("span[data-cy='card-bathrooms']::text").get(),
-                "price": selector.css("div.relative.w-full.overflow-hidden.rounded-2xl.bg-white::attr("
-                                      "data-bi-listing-price)").get(),
+                "price": selector.css(
+                    "div.relative.w-full.overflow-hidden.rounded-2xl.bg-white::attr("
+                    "data-bi-listing-price)"
+                ).get(),
+                "site": "BuyRentKenya",
             }
 
         next_page_links = response.css(

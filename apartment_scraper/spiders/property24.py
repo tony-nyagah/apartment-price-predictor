@@ -5,7 +5,7 @@ class Property24Spider(scrapy.Spider):
     name = "property24"
     allowed_domains = ["www.property24.co.ke"]
     start_urls = [
-        "https://www.property24.co.ke/apartments-flats-to-rent-in-nairobi-c1890"
+        "https://www.property24.co.ke/apartments-flats-to-rent?cityids=1890,1846&suburbids=14611,14520,14595,14580"
     ]
 
     def parse(self, response):

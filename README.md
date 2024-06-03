@@ -66,3 +66,4 @@ Scraping the data generates a csv file named `apartments.csv`.
 ## Contact
 [WIP]
 
+Airflow integration example: [Airflow example](https://github.com/Mutai-Gilbert/Automating-Data-Scrapers-Apache-Airflow)
